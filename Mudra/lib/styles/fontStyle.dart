@@ -11,6 +11,12 @@ class FontStyles {
     fontFamily: 'Nunito-bold',
     fontWeight: FontWeight.w600,
   );
+  static TextStyle numberPad = const TextStyle(
+  fontSize: 40,
+  color: Color(0xff595959),
+  fontFamily: 'Nunito',
+  fontWeight: FontWeight.w600,
+  );
   static TextStyle heading2_details = const TextStyle(
     fontSize: 15,
     color: Color(0xff595959),

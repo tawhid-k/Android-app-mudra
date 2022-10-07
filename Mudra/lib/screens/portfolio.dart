@@ -1,103 +1,153 @@
+import 'dart:convert';
 import 'dart:math';
-
-import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:mudra/screens/invest_screens/linechart.dart';
+import 'package:mudra/styles/fontStyle.dart';
+import 'portfolio_screens/portfolio_linechart.dart';
 
-class Portfolio extends StatelessWidget {
+class Portfolio extends StatefulWidget {
   const Portfolio({Key? key}) : super(key: key);
+  @override
+  State<Portfolio> createState() => _PortfolioState();
+}
 
+
+
+class _PortfolioState extends State<Portfolio> {
+  List _items = [];
+  Future<void> readJson() async {
+    final String response = await rootBundle.loadString('lib/Data/portfolio_records.json');
+    final data = await json.decode(response);
+    setState(() {
+      _items = data["items"];
+    });
+  }
+  List<Color> finalColor = DataSets.generateColor(30);
+  List<List<FlSpot>> sampleDataPoints = DataSets.generateSampleData(30);
   @override
   Widget build(BuildContext context) {
-    final Color lineColor = Color(0xff33cc33);
+    int idx = 0;
+    readJson();
     return Scaffold(
-      body: LineChart(
-        LineChartData(
-          lineTouchData: lineTouchData,
-          titlesData: titlesData,
-          /*minX: 0,
-          maxX: 11,
-          minY: 0,
-          maxY: 10,*/
-          gridData: FlGridData(
-            show: false,
-          ),
-          borderData: FlBorderData(
-            show: false,
-          ),
-          lineBarsData: [
-            LineChartBarData(
-              color: lineColor,
-              barWidth: 3,
-              dotData: FlDotData(
-                show: false,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(10, 30, 10, 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Holdings',
+                style: FontStyles.heading2,
               ),
-              belowBarData: BarAreaData(
-                show: true,
-                color: lineColor.withAlpha(50),
+              const SizedBox(
+                height: 30,
               ),
-              isCurved: true,
-              spots: generateSampleData(),
-            )
-          ]
-        )
+              _items.isNotEmpty
+              ? Expanded(
+                child: ListView.builder(
+                  itemCount: _items.length,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [
+                        Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  _items[index]["company"],
+                                  style: FontStyles.heading4,
+                                ),
+                                Text(
+                                  _items[index]["company full name"],
+                                  style: FontStyles.listDetails,
+                                ),
+                              ],
+                            ),
+                            Spacer(),
+                            Container(
+                              width: MediaQuery.of(context).size.width/3.5,
+                              height: 50,
+                              child: PortfolioLineChart(pointsList: this.sampleDataPoints[idx++], lineColor: this.finalColor[idx++]),
+                            ),
+                            Spacer(),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  _items[index]["price"],
+                                  style: FontStyles.heading4,
+                                ),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.arrow_downward,
+                                      size: 18,
+                                      color: Colors.red[700],
+                                    ),
+                                    Text(
+                                      _items[index]["change"],
+                                      style: TextStyle(
+                                        fontFamily: 'Nunito-bold',
+                                        color: Colors.red[700],
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                        ColumnSeparatorLine(),
+                      ],
+                    );
+                  },
+                ),
+              ) : Container(),
+            ],
+          ),
+        ),
       ),
     );
   }
-  FlTitlesData get titlesData => FlTitlesData(
-    bottomTitles: AxisTitles(drawBehindEverything: false),
-    rightTitles: AxisTitles(drawBehindEverything: false),
-    topTitles: AxisTitles(drawBehindEverything: false),
-    leftTitles: AxisTitles(drawBehindEverything: false),
-  );
-  LineTouchData get lineTouchData => LineTouchData(
-    handleBuiltInTouches: true,
-    touchTooltipData: LineTouchTooltipData(
-      tooltipBgColor: Colors.black.withOpacity(0.8),
-    ),
-  );
-  static List<FlSpot> generateSampleData() {
-    final List<FlSpot> result = [];
-    final numPoints = 60;
-    final maxY = 6;
-    double prev = 0;
-    for (int i=1; i<numPoints; i++) {
-      final next = prev/1.2 + Random().nextInt(3).toDouble() % -1000 * i +
-      Random().nextDouble() * maxY / 10;
-      prev = next;
-      result.add(FlSpot(i.toDouble(), next));
-    }
-    return result;
+  Container ColumnSeparatorLine() {
+    return Container(
+      margin: EdgeInsets.only(bottom: 30, top: 30),
+      width: MediaQuery.of(context).size.width,
+      height: 1.2,
+      color: Colors.grey,
+    );
   }
 }
 
-/*
-LineChart(
-            LineChartData(
-                minX: 0,
-                maxX: 11,
-                minY: 0,
-                maxY: 10,
-                gridData: FlGridData(
-                  show: false,
-                ),
-                borderData: FlBorderData(
-                  show: true,
-                ),
-                lineBarsData: [
-                  LineChartBarData(
-                    isCurved: true,
-                    barWidth: 3,
-                    spots: [
-                      FlSpot(0, 3),
-                      FlSpot(1, 6),
-                      FlSpot(3, 5),
-                      FlSpot(6, 8),
-                      FlSpot(8, 5),
-                      FlSpot(10, 9),
-                      FlSpot(11, 6),
-                    ],
-                  )
-                ]
-            )
-        ),
-*/
+class DataSets {
+  static List<Color> generateColor(int len) {
+    List<Color> lineColor = [];
+    for(int j=0; j<len; j++) {
+      final List<Color> colorList = [Colors.red, Color(0xff006600)];
+      final Color sampleColor = colorList[Random().nextInt(2)];
+      lineColor.add(sampleColor);
+    }
+    return lineColor;
+  }
+  static List<List<FlSpot>> generateSampleData(int len) {
+    List<List<FlSpot>> samplePoints = [];
+    for(int j=0; j<len; j++) {
+      final List<FlSpot> result = [];
+      final numPoints = 50;
+      final maxY = 6;
+      double prev = 0;
+      for (int i=1; i<numPoints; i++) {
+        final next = prev/2 + Random().nextInt(3).toDouble() /*% -1000 * i*/ +
+            Random().nextDouble() * maxY / 10;
+        prev = next;
+        result.add(FlSpot(i.toDouble(), next));
+      }
+      samplePoints.add(result);
+    }
+    return samplePoints;
+  }
+}

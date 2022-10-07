@@ -13,7 +13,7 @@ class _PersonalDetailsState extends State<PersonalDetails> {
   Widget ColumnSeparatorLine() {
     return Container(
       margin: EdgeInsets.only(bottom: 20, top: 10),
-      width: 400,
+      width: MediaQuery.of(context).size.width,
       height: 1.2,
       color: Colors.grey,
     );

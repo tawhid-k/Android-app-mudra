@@ -1,5 +1,6 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:mudra/screens/invest_screens/show_chart_details.dart';
 import 'package:mudra/styles/fontStyle.dart';
 import 'linechart.dart';
 
@@ -11,22 +12,29 @@ class InvestHome extends StatefulWidget {
 }
 
 class _InvestHomeState extends State<InvestHome> {
-  Padding getLineChartChild() {
-    return Padding(
-      padding: EdgeInsets.only(top: 15, right: 15),
-      child: Container(
-        height: 150,
-        width: 150,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(
-            width: 2,
-            color: Colors.black12,
+  InkWell getLineChartChild() {
+    return InkWell(
+      onTap: () {
+        Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const ShowChartDetails()),
+        );
+      },
+      child: Padding(
+        padding: EdgeInsets.only(top: 15, right: 15),
+        child: Container(
+          height: 150,
+          width: 150,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              width: 2,
+              color: Colors.black12,
+            ),
           ),
-        ),
-        child: const Padding(
-          padding: const EdgeInsets.fromLTRB(0, 20, 0, 30),
-          child: LineChartGenerator(),
+          child: const Padding(
+            padding: const EdgeInsets.fromLTRB(0, 20, 0, 50),
+            child: LineChartGenerator(),
+          ),
         ),
       ),
     );
@@ -56,6 +64,7 @@ class _InvestHomeState extends State<InvestHome> {
       body: Container(
         padding: EdgeInsets.only(left: 15, top: 40, right: 15),
         child: ListView(
+          physics: BouncingScrollPhysics(),
           children: [
             Text(
               'Invest',
@@ -78,7 +87,7 @@ class _InvestHomeState extends State<InvestHome> {
                           borderRadius: BorderRadius.circular(10),
                       ),
                       hintText: 'Search name or symbol',
-                      hintStyle: TextStyle(
+                      hintStyle: const TextStyle(
                         fontSize: 20,
                         color: Color(0xff595959),
                         fontFamily: 'Nunito-bold',

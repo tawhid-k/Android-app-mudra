@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mudra/screens/portfolio.dart';
 import 'invest_screens/invest_home.dart';
 import 'settings.dart';
+import 'home_screens/home.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  List<Widget> _pages = <Widget> [Center(child:Text("Home")), InvestHome(), Center(child:Text("Move")),
+  List<Widget> _pages = <Widget> [Home(), InvestHome(), Center(child:Text("Move")),
     Portfolio(), Settings()];
   int selectedIndex = 0;
   void _goToTappedPage(int index) {

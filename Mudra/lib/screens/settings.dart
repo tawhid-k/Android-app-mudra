@@ -3,6 +3,8 @@ import '/styles/fontStyle.dart';
 import 'profile_screens/profile.dart';
 import 'account_screens/account_settings.dart';
 import 'transaction_history/transactions_record.dart';
+//todo: remove that imported file below
+import '/../TemporaryFiles/support.dart';
 
 class Settings extends StatelessWidget {
   const Settings({Key? key}) : super(key: key);
@@ -148,7 +150,12 @@ class Settings extends StatelessWidget {
                 Container(
                   width: 400,
                   child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(context,
+                          MaterialPageRoute(
+                              builder: (context) => const Support()),
+                        );
+                      },
                       splashColor: Colors.green[200],
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

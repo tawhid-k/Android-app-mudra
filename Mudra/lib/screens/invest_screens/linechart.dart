@@ -11,11 +11,10 @@ class LineChartGenerator extends StatelessWidget {
     final Color lineColor = Color(0xff006600);
     return LineChart(
           LineChartData(
+              lineTouchData: LineTouchData(
+                handleBuiltInTouches: false,
+              ),
               titlesData: titlesData,
-              /*minX: 0,
-          maxX: 11,
-          minY: 0,
-          maxY: 10,*/
               gridData: FlGridData(
                 show: false,
               ),

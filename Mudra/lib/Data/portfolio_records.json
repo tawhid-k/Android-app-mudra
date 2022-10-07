@@ -1,0 +1,16 @@
+{
+  "items": [
+      {
+        "company": "NVDA",
+        "company full name": "NVIDIA Corp",
+        "price": "250,00 BDT",
+        "change": "-1.4096 (-1.07%)"
+      },
+      {
+        "company": "PATH",
+        "company full name": "UniPath Inc",
+        "price": "13.35 BDT",
+        "change": "-0.405 (-2.95%)"
+      }
+  ]
+}
