@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'small_widgets/welcome.dart';
 import 'small_widgets/moneyboxes.dart';
+import 'small_widgets/extra_message_box.dart';
+import 'small_widgets/trending_choices.dart';
+import 'small_widgets/exploring_mudra.dart';
+import 'small_widgets/news.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -20,9 +24,14 @@ class _HomeState extends State<Home> {
             scrollDirection: Axis.vertical,
             physics: BouncingScrollPhysics(),
             child: Column(
-              children: const [
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
                 Welcome(),
                 MoneyBoxes(),
+                ExtraMessageBox(),
+                TrendingChoices(),
+                ExploringMudra(),
+                News(),
               ]
             ),
           )

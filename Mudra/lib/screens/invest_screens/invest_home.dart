@@ -2,7 +2,8 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:mudra/screens/invest_screens/show_chart_details.dart';
 import 'package:mudra/styles/fontStyle.dart';
-import 'linechart.dart';
+import '/../common/linechart_generator.dart';
+//import 'linechart.dart';
 
 class InvestHome extends StatefulWidget {
   const InvestHome({Key? key}) : super(key: key);
@@ -21,20 +22,80 @@ class _InvestHomeState extends State<InvestHome> {
       },
       child: Padding(
         padding: EdgeInsets.only(top: 15, right: 15),
-        child: Container(
-          height: 150,
-          width: 150,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(
-              width: 2,
-              color: Colors.black12,
+        child: Stack(
+          children: [
+            Container(
+              height: 150,
+              width: 150,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  width: 2,
+                  color: Colors.black12,
+                ),
+              ),
+              child: const Padding(
+                padding: const EdgeInsets.fromLTRB(0, 20, 0, 50),
+                child: LineChartGenerator(),
+              ),
             ),
-          ),
-          child: const Padding(
-            padding: const EdgeInsets.fromLTRB(0, 20, 0, 50),
-            child: LineChartGenerator(),
-          ),
+            const Positioned(
+              top: 10,
+              left: 10,
+              child: Image(
+                image: AssetImage('lib/images/bkash.png'),
+                width: 50,
+                height: 20,
+              ),
+            ),
+            Positioned(
+              bottom: 8,
+              left: 10,
+              child: Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text(
+                          'BKash',
+                           style: TextStyle(
+                             fontSize: 13,
+                             color: Colors.black,
+                           ),
+                      ),
+                      Text(
+                        'BKash Limited',
+                        style: TextStyle(
+                          fontSize: 8,
+                          color: Color(0xff808080),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    width: 25,
+                  ),
+                  Row(
+                    children: const [
+                      Icon(
+                          Icons.arrow_upward,
+                          color: Color(0xff008000),
+                          size: 15,
+                      ),
+                      Text(
+                        '0.67%',
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff008000),
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );

@@ -9,36 +9,36 @@ class LineChartGenerator extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color lineColor = Color(0xff006600);
     return LineChart(
-          LineChartData(
-              lineTouchData: LineTouchData(
-                handleBuiltInTouches: false,
-              ),
-              titlesData: titlesData,
-              gridData: FlGridData(
-                show: false,
-              ),
-              borderData: FlBorderData(
-                show: false,
-              ),
-              lineBarsData: [
-                LineChartBarData(
-                  color: lineColor,
-                  barWidth: 2,
-                  dotData: FlDotData(
-                    show: false,
-                  ),
-                  //todo: Show gradient below the graph
-                  /*belowBarData: BarAreaData(
+        LineChartData(
+            lineTouchData: LineTouchData(
+              handleBuiltInTouches: false,
+            ),
+            titlesData: titlesData,
+            gridData: FlGridData(
+              show: false,
+            ),
+            borderData: FlBorderData(
+              show: false,
+            ),
+            lineBarsData: [
+              LineChartBarData(
+                color: lineColor,
+                barWidth: 2,
+                dotData: FlDotData(
+                  show: false,
+                ),
+                //todo: Show gradient below the graph
+                /*belowBarData: BarAreaData(
                     show: true,
                     color: lineColor.withAlpha(50),
                   ),*/
-                  //todo: Shows smooth graph if true,
-                  isCurved: false,
-                  spots: generateSampleData(),
-                )
-              ]
-          )
-      );
+                //todo: Shows smooth graph if true,
+                isCurved: false,
+                spots: generateSampleData(),
+              )
+            ]
+        )
+    );
   }
   FlTitlesData get titlesData => FlTitlesData(
     bottomTitles: AxisTitles(drawBehindEverything: false),
@@ -48,7 +48,7 @@ class LineChartGenerator extends StatelessWidget {
   );
   static List<FlSpot> generateSampleData() {
     final List<FlSpot> result = [];
-    final numPoints = 50;
+    final numPoints = 120;
     final maxY = 6;
     double prev = 0;
     for (int i=1; i<numPoints; i++) {
