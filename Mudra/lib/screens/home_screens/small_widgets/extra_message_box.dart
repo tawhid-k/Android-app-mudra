@@ -9,13 +9,13 @@ class ExtraMessageBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: const EdgeInsets.only(top: 20),
+        margin: const EdgeInsets.only(top: 2),
         padding: const EdgeInsets.fromLTRB(20, 15, 10, 25),
-        height: 130,
-        width: MediaQuery.of(context).size.width / 1.1,
+        height: 115,
+        width: MediaQuery.of(context).size.width/1.1,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(width: 2, color: Color(0xff8c8c8c).withOpacity(0.5)),
+          border: Border.all(width: 1, color: Color(0xff8c8c8c).withOpacity(0.5)),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -24,22 +24,20 @@ class ExtraMessageBox extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 9),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: const[
                   Text(
                     'Boost your investment journey',
                     style: TextStyle(
-                      fontSize: 19,
+                      fontSize: 16,
                       fontFamily: 'Nunito-bold',
                       color: Color(0xff4d4d4d),
                     ),
                   ),
-                  SizedBox(
-                    height: 3,
-                  ),
                   Text(
                     'Check what suits you the best and invest!',
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 13,
                       fontFamily: 'Nunito',
                       color: Color(0xff808080),
                     ),
@@ -47,11 +45,9 @@ class ExtraMessageBox extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 5,
-            ),
+            const Spacer(),
             LinearPercentIndicator(
-              width: MediaQuery.of(context).size.width/1.3,
+              width: MediaQuery.of(context).size.width/1.25,
               animation: true,
               lineHeight: 15.0,
               animationDuration: 2500,

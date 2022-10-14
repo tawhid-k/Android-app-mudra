@@ -1,70 +1,107 @@
 {
   "items": [
+
       {
-        "company": "NVDA",
-        "company full name": "NVIDIA Corp",
-        "price": "250,00 BDT",
-        "change": "-1.4096 (-1.07%)"
+        "company": "ORIONPHARM",
+        "company full name": "Orion Pharma Ltd. 148",
+        "price": 148,
+        "change": 0.0299
       },
       {
-        "company": "PATH",
-        "company full name": "UniPath Inc",
-        "price": "13.35 BDT",
-        "change": "-0.405 (-2.95%)"
+        "company": "BEXIMCO",
+        "company full name": "Bangladesh Export Import Company Ltd.",
+        "price": 131.3,
+        "change": -0.003
       },
       {
-        "company": "PATH",
-        "company full name": "UniPath Inc",
-        "price": "13.35 BDT",
-        "change": "-0.405 (-2.95%)"
+        "company": "SONALIPAPR ",
+        "company full name": "Sonali Paper & Board Mills Ltd.",
+        "price": 699.3,
+        "change": 0.0461
       },
       {
-        "company": "PATH",
-        "company full name": "UniPath Inc",
-        "price": "13.35 BDT",
-        "change": "-0.405 (-2.95%)"
+        "company": "BBS",
+        "company full name": "Bangladesh Building Systems Ltd.",
+        "price": 33.2,
+        "change": -0.0122
       },
       {
-        "company": "PATH",
-        "company full name": "UniPath Inc",
-        "price": "13.35 BDT",
-        "change": "-0.405 (-2.95%)"
+        "company": "EHL",
+        "company full name": "Eastern Housing Limited",
+        "price": 110.7,
+        "change": -0.0125
       },
       {
-        "company": "PATH",
-        "company full name": "UniPath Inc",
-        "price": "13.35 BDT",
-        "change": "-0.405 (-2.95%)"
+        "company": "BSC",
+        "company full name": "Bangladesh Shipping Corporation",
+        "price": 157,
+        "change": -0.0175
       },
       {
-        "company": "PATH",
-        "company full name": "UniPath Inc",
-        "price": "13.35 BDT",
-        "change": "-0.405 (-2.95%)"
+        "company": "BBSCABLES",
+        "company full name": "BBS Cables Limited",
+        "price": 60.5,
+        "change": 0.0017
       },
       {
-        "company": "PATH",
-        "company full name": "UniPath Inc",
-        "price": "13.35 BDT",
-        "change": "-0.405 (-2.95%)"
+        "company": "JHRML",
+        "company full name": "JMI Hospital Requisite Manufacturing Limited",
+        "price": 130,
+        "change": -0.0218
       },
       {
-        "company": "PATH",
-        "company full name": "UniPath Inc",
-        "price": "13.35 BDT",
-        "change": "-0.405 (-2.95%)"
+        "company": "BEACONPHAR",
+        "company full name": " Beacon Pharmaceuticals Limited",
+        "price": 380.8,
+        "change": 0.0871
       },
       {
-        "company": "PATH",
-        "company full name": "UniPath Inc",
-        "price": "13.35 BDT",
-        "change": "-0.405 (-2.95%)"
+        "company": "SPCERAMICS",
+        "company full name": "Shinepukur Ceramics Limited",
+        "price": 54.5,
+        "change": -0.0198
       },
       {
-        "company": "PATH",
-        "company full name": "UniPath Inc",
-        "price": "13.35 BDT",
-        "change": "-0.405 (-2.95%)"
+        "company": "INTRACO",
+        "company full name": "Intraco Refueling Station Limited",
+        "price": 47.5,
+        "change": 0.0193
+      },
+      {
+        "company": "COPPERTECH",
+        "company full name": "Coppertech Industries Limited",
+        "price": 51.1,
+        "change": 0.0179
+      },
+      {
+        "company": "BSCCL",
+        "company full name": "Bangladesh Submarine Cable Company Limited",
+        "price": 221,
+        "change": -0.0018
+      },
+      {
+        "company": "TITASGAS",
+        "company full name": "Titas Gas Transmission & Dist. Co. Ltd.",
+        "price": 42.5,
+        "change": 0.0071
+      },
+      {
+        "company": " IPDC",
+        "company full name": " IPDC Finance Limited",
+        "price": 62.1,
+        "change": -0.0236
+      },
+      {
+        "company": "ORIONINFU",
+        "company full name": "Orion Infusion Ltd.",
+        "price": 754,
+        "change": 0.075
+      },
+      {
+        "company": "ADNTEL",
+        "company full name": "ADN Telecom Limited",
+        "price": 83.7,
+        "change": 0.0295
       }
-  ]
+    ]
 }

@@ -149,7 +149,7 @@ class _InvestHomeState extends State<InvestHome> {
                       ),
                       hintText: 'Search name or symbol',
                       hintStyle: const TextStyle(
-                        fontSize: 20,
+                        fontSize: 16,
                         color: Color(0xff595959),
                         fontFamily: 'Nunito-bold',
                         fontWeight: FontWeight.w600,
@@ -171,69 +171,83 @@ class _InvestHomeState extends State<InvestHome> {
                 Row(
                   //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    OutlinedButton(
-                      onPressed: null,
-                      style: OutlinedButton.styleFrom(
-                        shape: StadiumBorder(),
+                    Expanded(
+                      child: OutlinedButton(
+                        onPressed: null,
+                        style: OutlinedButton.styleFrom(
+                          shape: StadiumBorder(),
+                        ),
+                        child: const Text("Top 10 gainers"),
                       ),
-                      child: const Text("Top 10 gainers"),
                     ),
                     SizedBox(
                       width: 10,
                     ),
-                    OutlinedButton(
-                      onPressed: null,
-                      style: ButtonStyle(
-                        shape: MaterialStateProperty.all(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0),
-                            )
+                    Expanded(
+                      child: OutlinedButton(
+                        onPressed: null,
+                        style: ButtonStyle(
+                          shape: MaterialStateProperty.all(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0),
+                              )
+                          ),
                         ),
+                        child: const Text("Top 10 losers"),
                       ),
-                      child: const Text("Top 10 losers"),
                     ),
                     SizedBox(
-                      width: 10,
+                    width: 10,
                     ),
-                    OutlinedButton(
-                      onPressed: null,
-                      style: ButtonStyle(
-                        shape: MaterialStateProperty.all(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0),
-                            )
+                    Expanded(
+                      child: OutlinedButton(
+                        onPressed: null,
+                        style: ButtonStyle(
+                          shape: MaterialStateProperty.all(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30.0),
+                              )
+                          ),
                         ),
+                        child: const Text("Top 20 sales"),
                       ),
-                      child: const Text("Top 20 sales"),
                     ),
                   ],
                 ),
-                Row(
+                Column(
                   children: [
-                    OutlinedButton(
-                      onPressed: null,
-                      style: ButtonStyle(
-                        shape: MaterialStateProperty.all(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0),
-                            )
+                    Row(
+                      children: [
+                        Flexible(
+                          child: OutlinedButton(
+                            onPressed: null,
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                  )
+                              ),
+                            ),
+                            child: const Text("DSE 30"),
+                          ),
                         ),
-                      ),
-                      child: const Text("DSE 30"),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    OutlinedButton(
-                      onPressed: null,
-                      style: ButtonStyle(
-                        shape: MaterialStateProperty.all(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0),
-                            )
+                        SizedBox(
+                          width: 10,
                         ),
-                      ),
-                      child: const Text("DSEX"),
+                        Flexible(
+                          child: OutlinedButton(
+                            onPressed: null,
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                  )
+                              ),
+                            ),
+                            child: const Text("DSEX"),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

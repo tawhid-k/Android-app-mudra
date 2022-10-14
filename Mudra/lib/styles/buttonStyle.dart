@@ -11,7 +11,7 @@ class ButtonStyles {
   static ButtonStyle elevatedButtonStyle1(context) {
     return ElevatedButton.styleFrom(
       backgroundColor: Color(0xff262626),
-        fixedSize: Size(MediaQuery.of(context).size.width, 58),
+        fixedSize: Size(MediaQuery.of(context).size.width, 50),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50)));
   }

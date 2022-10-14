@@ -11,14 +11,14 @@ class _NewsState extends State<News> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 15, top: 15),
+      padding: EdgeInsets.only(left: 15, top: 30),
 
       child: Column(
         children: [
           Text(
             'News',
             style: TextStyle(
-              fontSize: 22,
+              fontSize: 18,
               color: Color(0xff333333),
               fontFamily: 'Nunito-bold',
             ),

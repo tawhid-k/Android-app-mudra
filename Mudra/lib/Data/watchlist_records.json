@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "company": "NPOLYMER",
+      "company full name": "National Polymer Industries Ltd.",
+      "price": 62.7,
+      "change": -0.0203
+    },
+    {
+      "company": "YPL",
+      "company full name": "Yeakin Polymer Limited",
+      "price": 26.1,
+      "change": -0.0297
+    },
+    {
+      "company": "BDCOM",
+      "company full name": "BDCOM Online Ltd.",
+      "price": 71.2,
+      "change": 0.087
+    }
+  ]
+}

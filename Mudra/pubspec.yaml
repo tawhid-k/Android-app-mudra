@@ -62,6 +62,7 @@ flutter:
   assets:
     - lib/screens/transaction_history/data.json
     - lib/Data/portfolio_records.json
+    - lib/Data/watchlist_records.json
     - lib/images/
   fonts:
     - family: Nunito

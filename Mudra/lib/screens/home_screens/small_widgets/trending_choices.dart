@@ -16,19 +16,19 @@ class _TrendingChoicesState extends State<TrendingChoices> {
     return Container(
       width: MediaQuery.of(context).size.width,
       child: Padding(
-        padding: const EdgeInsets.only(top: 20),
+        padding: const EdgeInsets.only(top: 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 15, bottom: 20),
+              padding: const EdgeInsets.only(left: 5, bottom: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
                   Text(
                     'Trending Choices',
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: 17,
                       color: Color(0xff333333),
                       fontFamily: 'Nunito-bold',
                     ),
@@ -36,7 +36,7 @@ class _TrendingChoicesState extends State<TrendingChoices> {
                   Text(
                     'Most invested in the last week',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 13,
                       color: Color(0xff666666),
                       fontFamily: 'Nunito-bold',
                     ),
@@ -139,7 +139,7 @@ class _TrendingChoicesState extends State<TrendingChoices> {
                 ],
               ),
               const SizedBox(
-                width: 80,
+                width: 60,
               ),
               Row(
                 children: const [

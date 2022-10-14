@@ -5,14 +5,14 @@ import 'package:mudra/styles/fontStyle.dart';
 
 import '../../styles/buttonStyle.dart';
 
-class BuyShare extends StatefulWidget {
-  const BuyShare({Key? key}) : super(key: key);
+class SellShare extends StatefulWidget {
+  const SellShare({Key? key}) : super(key: key);
 
   @override
-  State<BuyShare> createState() => _BuyShareState();
+  State<SellShare> createState() => _SellShareState();
 }
 
-class _BuyShareState extends State<BuyShare> {
+class _SellShareState extends State<SellShare> {
   int enteredNumber = 0;
   double estimaedCost = 0.00;
   double pricePerShare = 250.00;
@@ -26,7 +26,7 @@ class _BuyShareState extends State<BuyShare> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'How many shares of Random will you buy in your personal account?',
+                'How many shares of Random will you sell from your personal account?',
                 style: FontStyles.heading4,
               ),
               Flexible(
@@ -62,7 +62,7 @@ class _BuyShareState extends State<BuyShare> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Estimated cost', style: FontStyles.heading5,),
+                      Text('Estimated value', style: FontStyles.heading5,),
                       Text(estimaedCost.toString() + " BDT", style: FontStyles.heading5,)
                     ],
                   ),
@@ -70,7 +70,7 @@ class _BuyShareState extends State<BuyShare> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Funds available', style: FontStyles.heading5,),
+                      Text('Available shares', style: FontStyles.heading5,),
                       Text('30,000 BDT', style: FontStyles.heading5,)
                     ],
                   )
@@ -124,13 +124,13 @@ class _BuyShareState extends State<BuyShare> {
                         Text('  ', style: FontStyles.numberPad,),
                         numberPadButton(0),
                         InkWell(
-                          onTap: () {
-                            setState(() {
-                              double curNumber = enteredNumber / 10;
-                              enteredNumber = curNumber.toInt();
-                              estimaedCost = enteredNumber * pricePerShare;
-                            });
-                          },
+                            onTap: () {
+                              setState(() {
+                                double curNumber = enteredNumber / 10;
+                                enteredNumber = curNumber.toInt();
+                                estimaedCost = enteredNumber * pricePerShare;
+                              });
+                            },
                             child: Icon(Icons.backspace_outlined)
                         ),
                       ],
@@ -143,10 +143,10 @@ class _BuyShareState extends State<BuyShare> {
                 height: MediaQuery.of(context).size.height/20,
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: ElevatedButton(
-                    onPressed: () {},
+                  onPressed: () {},
                   style: ButtonStyles.elevatedButtonStyle1(context),
                   child: const Text(
-                    'Buy',
+                    'Continue',
                     style: TextStyle(
                       fontFamily: 'Nunito-bold',
                       fontSize: 20,

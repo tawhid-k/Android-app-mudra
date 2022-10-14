@@ -4,6 +4,7 @@ import 'small_widgets/moneyboxes.dart';
 import 'small_widgets/extra_message_box.dart';
 import 'small_widgets/trending_choices.dart';
 import 'small_widgets/exploring_mudra.dart';
+import 'small_widgets/join_the_community.dart';
 import 'small_widgets/news.dart';
 
 class Home extends StatefulWidget {
@@ -19,18 +20,19 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(10, 30, 10, 20),
+          padding: const EdgeInsets.fromLTRB(10, 25, 10, 20),
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             physics: BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Welcome(),
                 MoneyBoxes(),
                 ExtraMessageBox(),
                 TrendingChoices(),
                 ExploringMudra(),
+                JoinTheCommunity(),
                 News(),
               ]
             ),

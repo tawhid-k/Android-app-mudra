@@ -4,10 +4,10 @@ class FontStyles {
   static TextStyle heading1 = const TextStyle(
     color: Color(0xff404040),
     fontWeight: FontWeight.bold,
-    fontSize: 40
+    fontSize: 33
   );
   static TextStyle heading2 = const TextStyle(
-    fontSize: 30,
+    fontSize: 22,
     fontFamily: 'Nunito-bold',
     fontWeight: FontWeight.w600,
   );
@@ -24,7 +24,7 @@ class FontStyles {
     fontWeight: FontWeight.w600,
   );
   static TextStyle heading3 = const TextStyle(
-    fontSize: 20,
+    fontSize: 15,
     fontFamily: 'Nunito-bold',
     fontWeight: FontWeight.w600,
   );
@@ -38,13 +38,19 @@ class FontStyles {
     fontFamily: 'Nunito-bold',
     fontWeight: FontWeight.w600,
   );
+  static TextStyle heading5red = const TextStyle(
+    fontSize: 14,
+    fontFamily: 'Nunito-bold',
+    fontWeight: FontWeight.w600,
+    color: Color(0xffb32400),
+  );
   static TextStyle listDetails = const TextStyle(
     fontFamily: 'Nunito',
-    fontSize: 15,
+    fontSize: 12,
     color: Colors.grey,
   );
   static TextStyle heading4 = const TextStyle(
-    fontSize: 18,
+    fontSize: 15,
     fontFamily: 'Nunito-bold',
     fontWeight: FontWeight.w600,
   );

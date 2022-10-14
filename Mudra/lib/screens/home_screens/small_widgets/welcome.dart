@@ -13,7 +13,7 @@ class Welcome extends StatelessWidget {
         const Text(
           'Good Afternoon!',
           style: TextStyle(
-            fontSize: 25,
+            fontSize: 20,
             fontFamily: 'Nunito-bold',
             fontWeight: FontWeight.w600,
           ),
@@ -38,7 +38,7 @@ class Welcome extends StatelessWidget {
               Text(
                 'Login',
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 13,
                   color: Colors.white,
                 )
               ),
