@@ -9,7 +9,9 @@ import '../invest_screens/create_alert.dart';
 import '../invest_screens/linechart.dart';
 
 class PortfolioParticularDetails extends StatelessWidget {
-  const PortfolioParticularDetails({Key? key}) : super(key: key);
+  final String companyName;
+  final String price;
+  PortfolioParticularDetails({Key? key, required this.companyName, required this.price}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +72,7 @@ class PortfolioParticularDetails extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Nagad',
+                        companyName,
                         style: FontStyles.heading2,
                       ),
                       SizedBox(
@@ -80,7 +82,7 @@ class PortfolioParticularDetails extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            '20560',
+                            price,
                             style: FontStyles.heading1,
                           ),
                           SizedBox(

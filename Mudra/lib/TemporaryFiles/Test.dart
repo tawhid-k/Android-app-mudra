@@ -51,7 +51,7 @@ class _TestState extends State<Test> {
                 InkWell(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const PortfolioParticularDetails()));
+                        MaterialPageRoute(builder: (context) => PortfolioParticularDetails(companyName: _items[index]["company"], price: _items[index]["price"].toString())));
                   },
                   child: Column(
                     children: [

@@ -84,16 +84,17 @@ class _BuyShareState extends State<BuyShare> {
               Spacer(),
               //For number pad
               Container(
-                padding: EdgeInsets.fromLTRB(60, 10, 60, 10),
+                alignment: Alignment.center,
+                padding: EdgeInsets.fromLTRB(30, 10, 30, 10),
                 child: Column(
                   children: [
                     // 1, 2, 3
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        numberPadButton(1),
-                        numberPadButton(2),
-                        numberPadButton(3),
+                        numberPadButton(1, context),
+                        numberPadButton(2, context),
+                        numberPadButton(3, context),
                       ],
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height/22),
@@ -101,9 +102,9 @@ class _BuyShareState extends State<BuyShare> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        numberPadButton(4),
-                        numberPadButton(5),
-                        numberPadButton(6),
+                        numberPadButton(4, context),
+                        numberPadButton(5, context),
+                        numberPadButton(6, context),
                       ],
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height/22),
@@ -111,9 +112,9 @@ class _BuyShareState extends State<BuyShare> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        numberPadButton(7),
-                        numberPadButton(8),
-                        numberPadButton(9),
+                        numberPadButton(7, context),
+                        numberPadButton(8, context),
+                        numberPadButton(9, context),
                       ],
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height/22),
@@ -121,8 +122,11 @@ class _BuyShareState extends State<BuyShare> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width/12,
+                        ),
                         Text('  ', style: FontStyles.numberPad,),
-                        numberPadButton(0),
+                        numberPadButton(0, context),
                         InkWell(
                           onTap: () {
                             setState(() {
@@ -131,7 +135,11 @@ class _BuyShareState extends State<BuyShare> {
                               estimaedCost = enteredNumber * pricePerShare;
                             });
                           },
-                            child: Icon(Icons.backspace_outlined)
+                            child: Container(
+                              height: 50,
+                              width: MediaQuery.of(context).size.width/5,
+                              child: Icon(Icons.backspace_outlined),
+                            )
                         ),
                       ],
                     ),
@@ -161,7 +169,7 @@ class _BuyShareState extends State<BuyShare> {
       ),
     );
   }
-  InkWell numberPadButton(int number) {
+  InkWell numberPadButton(int number, context) {
     return InkWell(
         onTap: () {
           setState(() {
@@ -169,7 +177,12 @@ class _BuyShareState extends State<BuyShare> {
             estimaedCost = enteredNumber * pricePerShare;
           });
         },
-        child: Text(number.toString(), style: FontStyles.numberPad,)
+        child: Container(
+          alignment: Alignment.center,
+          width: MediaQuery.of(context).size.width/5,
+          //color: Colors.green,
+          child: Text(number.toString(), style: FontStyles.numberPad,),
+        ),
     );
   }
 }

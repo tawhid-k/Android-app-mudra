@@ -40,7 +40,7 @@ class _PortfolioHoldingsState extends State<PortfolioHoldings> {
               InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const PortfolioParticularDetails()));
+                      MaterialPageRoute(builder: (context) => PortfolioParticularDetails(companyName: _items[index]["company"], price: _items[index]["price"].toString())));
                 },
                 child: Column(
                   children: [

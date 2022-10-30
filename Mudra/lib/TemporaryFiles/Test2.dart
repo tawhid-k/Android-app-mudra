@@ -15,8 +15,20 @@ class Test2 extends StatefulWidget {
 
 class _Test2State extends State<Test2> {
   List _items = [];
-  List<Color> finalColor = DataSets.generateColor(30);
   List<List<FlSpot>> sampleDataPoints = DataSets.generateSampleData(30);
+  List<Color>? finalColor = DataSets.generateColor(30);
+ /* @override
+  void initState() {
+    int len = _items.length;
+    for(int i=0; i<len; i++) {
+      if (sampleDataPoints[i][0].y <= sampleDataPoints[i][49].y) {
+        finalColor?.add(Color(0xff006600));
+      }
+      else {
+        finalColor?.add(Colors.red);
+      }
+    }
+  }*/
   @override
   Widget build(BuildContext context) {
     Future<void> readJson() async {
@@ -41,6 +53,7 @@ class _Test2State extends State<Test2> {
     return  _items.isNotEmpty
         ? ListView.builder(
       scrollDirection: Axis.vertical,
+      itemExtent: 10,
       itemCount: _items.length,
       itemBuilder: (context, index) {
         return Container(
@@ -50,7 +63,7 @@ class _Test2State extends State<Test2> {
               InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const PortfolioParticularDetails()));
+                      MaterialPageRoute(builder: (context) => PortfolioParticularDetails(companyName: _items[index]["company"], price: _items[index]["price"].toString())));
                 },
                 child: Column(
                   children: [
@@ -77,7 +90,7 @@ class _Test2State extends State<Test2> {
                         Container(
                           width: MediaQuery.of(context).size.width/3.5,
                           height: 30,
-                          child: PortfolioLineChart(pointsList: this.sampleDataPoints[idx++], lineColor: this.finalColor[idx++]),
+                          child: PortfolioLineChart(pointsList: this.sampleDataPoints[idx++], lineColor: this.finalColor![idx++]),
                         ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.end,

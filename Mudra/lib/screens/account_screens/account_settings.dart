@@ -42,6 +42,7 @@ class _AccountsSettingsState extends State<AccountsSettings> {
                     );
                   },
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Personal account',

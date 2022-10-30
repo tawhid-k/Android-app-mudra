@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mudra/screens/portfolio_screens/Components/watchlist.dart';
 import 'package:mudra/styles/fontStyle.dart';
 import '../TemporaryFiles/Test2.dart';
 import '../TemporaryFiles/Test.dart';
+import 'portfolio_screens/Components/top_buttons.dart';
+import 'portfolio_screens/Components/holdings.dart';
 import 'portfolio_screens/portfolio_holdings.dart';
 
 class Portfolio extends StatefulWidget {
@@ -29,50 +32,7 @@ class _PortfolioState extends State<Portfolio> {
               const SizedBox(
                 height: 17,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      _controller.animateToPage(0, duration: Duration(milliseconds: 100), curve: Curves.bounceIn);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xff262626),
-                      //fixedSize: Size(30, 20),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50)),
-                    ),
-                    child: const Text(
-                      'Holdings',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                      //style: FontStyles.heading5,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      _controller.animateToPage(1, duration: Duration(milliseconds: 100), curve: Curves.bounceIn);
-                    },
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xff262626),
-                        //fixedSize: Size(30, 20),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50)),
-                    ),
-                    child: const Text(
-                      'Watchlist',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                      //style: FontStyles.heading5,
-                    ),
-                  ),
-                ],
-              ),
+              TopButtons(controller: _controller),
               const SizedBox(
                 height: 30,
               ),
@@ -81,8 +41,8 @@ class _PortfolioState extends State<Portfolio> {
                   scrollDirection: Axis.horizontal,
                   controller: _controller,
                   children: [
-                    Test(),
-                    Test2(),
+                    Holdings(),
+                    Watchlist(),
                   ],
                 ),
               )
