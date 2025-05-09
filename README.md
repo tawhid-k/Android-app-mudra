@@ -62,8 +62,4 @@ The project follows Flutter's standard development practices and includes:
 - [Flutter First App Tutorial](https://docs.flutter.dev/get-started/codelab)
 - [Flutter Cookbook](https://docs.flutter.dev/cookbook)
 
-## License
-[Add your license here]
 
-## Contact
-[Add your contact information]
